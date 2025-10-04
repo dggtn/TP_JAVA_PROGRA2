@@ -92,4 +92,44 @@ public class Arbol<T> {
             return buscarRecursivo(nodo.getDerecho(), dato);
         }
     }
+
+    public void eliminar(T dato) {
+        raiz = eliminarRec(raiz, dato);
+    }
+
+    private INodo eliminarRec(INodo<T> nodo, T dato) {
+        if (nodo == null) return null;
+        int comparacion = comparator.compare(dato, nodo.getDato());
+
+        if (comparacion < 0) {
+            nodo.setIzquierdo(eliminarRec(nodo.getIzquierdo(), dato));
+        } else if (comparacion > 0) {
+            nodo.setDerecho(eliminarRec(nodo.getDerecho(), dato));
+        } else {
+            // Caso 1: nodo sin hijos
+            if (nodo.getIzquierdo() == null && nodo.getDerecho() == null) {
+                return null;
+            }
+            // Caso 2: un solo hijo
+            if (nodo.getIzquierdo() == null) {
+                return nodo.getDerecho();
+            }
+            if (nodo.getDerecho() == null) {
+                return nodo.getIzquierdo();
+            }
+
+            // Caso 3: dos hijos
+            INodo<T> sucesor = encontrarMinimo(nodo.getDerecho());
+            nodo.setDato(sucesor.getDato());
+            nodo.setDerecho(eliminarRec(nodo.getDerecho(), sucesor.getDato()));
+        }
+        return nodo;
+    }
+
+    private INodo encontrarMinimo(INodo<T> nodo) {
+        while (nodo.getIzquierdo() != null) {
+            nodo = nodo.getIzquierdo();
+        }
+        return nodo; //clavijo
+    }
 }

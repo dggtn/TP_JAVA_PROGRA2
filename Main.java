@@ -87,7 +87,9 @@ public class Main {
         System.out.println("--------------------------------");
         System.out.println("               ");
 
-
+        System.out.println("Elimino a :" + daniela.getNombre());
+        arbolNombres.eliminar(daniela);
+        arbolNombres.recorridoInorden();
     }
 
 }
