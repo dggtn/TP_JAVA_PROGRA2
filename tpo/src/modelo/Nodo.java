@@ -1,3 +1,7 @@
+package modelo;
+
+import interfaz.INodo;
+
 public class Nodo<T> implements INodo<T> {
 
     private T dato;

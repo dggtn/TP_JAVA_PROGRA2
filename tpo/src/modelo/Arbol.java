@@ -1,6 +1,11 @@
+package modelo;
+
+import interfaz.IArbol;
+import interfaz.INodo;
+
 import java.util.Comparator;
 
-public class Arbol<T> {
+public class Arbol<T> implements IArbol<T> {
 
     private Comparator<T> comparator;
 

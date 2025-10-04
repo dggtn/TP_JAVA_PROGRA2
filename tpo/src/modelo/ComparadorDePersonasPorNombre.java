@@ -1,3 +1,5 @@
+package modelo;
+
 import java.util.Comparator;
 
 public class ComparadorDePersonasPorNombre  implements Comparator<Persona> {

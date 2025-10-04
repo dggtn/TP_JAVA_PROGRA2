@@ -1,3 +1,9 @@
+import interfaz.INodo;
+import modelo.Arbol;
+import modelo.ComparadorDePersonasPorDni;
+import modelo.ComparadorDePersonasPorNombre;
+import modelo.Persona;
+
 public class Main {
 
     public static void main(String[] args) {

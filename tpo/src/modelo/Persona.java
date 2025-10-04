@@ -1,3 +1,5 @@
+package modelo;
+
 public class Persona implements Comparable<Persona> {
     String nombre;
     Integer dni;

@@ -1,3 +1,5 @@
+package interfaz;
+
 public interface INodo<T> {
 
      T getDato() ;
