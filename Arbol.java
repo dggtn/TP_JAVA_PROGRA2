@@ -77,11 +77,15 @@ public class Arbol<T> {
     }
 
     private INodo<T> buscarRecursivo(INodo<T> nodo, T dato) {
-        if (nodo == null || nodo.getDato().equals(dato)) {
+
+        if (nodo == null) return null;
+
+        int comparacion = comparator.compare(dato, nodo.getDato());
+
+        if (comparacion == 0) {
             return nodo;
         }
 
-        int comparacion = comparator.compare(dato, nodo.getDato());
         if (comparacion < 0) {
             return buscarRecursivo(nodo.getIzquierdo(), dato);
         } else {

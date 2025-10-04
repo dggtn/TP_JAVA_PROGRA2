@@ -1,6 +1,3 @@
-import java.sql.SQLOutput;
-import java.util.SortedSet;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -28,6 +25,9 @@ public class Main {
         arbolDnis.insertar(jaime);
         arbolDnis.insertar(carlos);
         arbolDnis.insertar(gabriela);
+
+        INodo<Persona> nodo = arbolDnis.buscar(daniela);
+        System.out.println("Nodo encontrado: " + nodo.getDato());
 
 
         System.out.println("Arbol por DNI: ");
