@@ -19,7 +19,6 @@ public class Arbol<T> implements IArbol<T> {
         this.comparator = comparator;
         this.raiz = null;
     }
-
     private INodo<T> insertarRecursivo(INodo<T> nodo, T dato) {
         if (nodo == null) {
             return new Nodo<T>(dato);
